@@ -37,4 +37,9 @@ class Dealership
     end
     @total_amount
   end
+
+  def details
+    details = Hash.new
+    require 'pry'; binding.pry
+  end
 end
