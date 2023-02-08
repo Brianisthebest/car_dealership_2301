@@ -1,11 +1,12 @@
 class Dealership
-  attr_reader :name, :address, :inventory, :inventory_count
+  attr_reader :name, :address, :inventory, :inventory_count, :total_amount
 
   def initialize(name, address)
     @name = name
     @address = address
     @inventory = []
     @inventory_count = 0
+    @total_amount = 0
   end
 
   def add_car(new_car)
@@ -28,5 +29,12 @@ class Dealership
       car.make == searched_make
     end
     found_cars
+  end
+
+  def total_value
+    inventory.each do |car|
+      @total_amount += car.total_cost
+    end
+    @total_amount
   end
 end
