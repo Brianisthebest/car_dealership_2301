@@ -44,4 +44,12 @@ RSpec.describe Dealership do
       expect(dealership.inventory_count).to eq(2)
     end
   end
+
+  describe '#has_inventory?' do
+    it 'can check to see if the inventory is empty' do
+      dealership = Dealership.new("Acme Auto", "123 Main Street")
+
+      expect(dealership.has_inventory?).to eq(false)
+    end
+  end
 end
