@@ -20,4 +20,13 @@ class Dealership
       true
     end
   end
+
+  def cars_by_make(searched_make)
+    found_cars = []
+    inventory.each do |car|
+      found_cars << car if
+      car.make == searched_make
+    end
+    found_cars
+  end
 end
