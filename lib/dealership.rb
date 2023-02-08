@@ -12,4 +12,12 @@ class Dealership
     @inventory_count += 1
     @inventory << new_car
   end
+
+  def has_inventory?
+    if @inventory.count == 0
+      false
+    else
+      true
+    end
+  end
 end
